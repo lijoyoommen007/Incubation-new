@@ -1,0 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body{
+  background: url('https://media.istockphoto.com/videos/colored-smoke-on-a-dark-background-blue-and-red-light-with-smoke-video-id1341408852?s=640x640');
+  background-size: cover;
+  }
