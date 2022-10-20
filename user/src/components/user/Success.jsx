@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Axios from 'axios'
 import { UserContext } from '../../Store/UserContext'
+import Img from '../../assets/kindpng_34058.png'
 
 function Success() {
   const { userDetails, setUserDetails } = useContext(UserContext)
@@ -22,6 +23,9 @@ function Success() {
 
     return (
         <div className='flex flex-col text-white h-screen justify-center items-center'>
+          <div className='w-20'>
+            <img className='animate-spin' src={Img} alt="Page not found" />
+        </div>
           <h1 className='text-3xl text-amber-400 font-bold'>Application Submitted</h1>
           <h3 className='text-xl'>Your application for Incubation is under process</h3>
           {form?.isBooked? <p>status : <span className='text-green-400 text-xl font-bold'>Approved</span> </p>:

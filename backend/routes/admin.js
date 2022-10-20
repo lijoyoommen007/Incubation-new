@@ -18,12 +18,12 @@ router.get('/users', (req, res, next) => {
 
   router.post('/login',async function(req, res, next){
     try{
-        const {ADMIN_EMAIL, ADMIN_PWD}=process.env
+        
     const {email, password} = req.body;
-    if(email===ADMIN_EMAIL) {
-        if (password===ADMIN_PWD) {
+    if(email=== 'admin@gmail.com') {
+        if (password==='admin') {
           const id='8394n43x14n384n1njk'
-          const token=jwt.sign({id}, process.env.JWT_KEY,{
+          const token=jwt.sign({id}, 'secret key' ,{
             expiresIn:3600,
           })
   
@@ -85,6 +85,7 @@ router.get('/users', (req, res, next) => {
 
    router.get('/approved',async (req, res, next) => {
     ApplicationModel.find({isApproved:true}).then((data)=>{
+      console.log(data);
       res.json({data});
    }).catch((err)=>{
     console.log(err);
